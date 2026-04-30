@@ -290,6 +290,27 @@
   .catalog-card .price { font-family: 'Fraunces', serif; font-size: 28px; color: var(--bean); margin-bottom: 20px; }
   .catalog-card .price small { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--bean-soft); letter-spacing: 0.1em; text-transform: uppercase; }
   .catalog-card .coming-label { font-size: 13px; color: var(--bean-soft); font-style: italic; margin-top: 8px; }
+  .brew-toggle {
+    background: none; border: none; cursor: pointer;
+    font-family: inherit; font-size: 13px;
+    color: var(--terracotta); letter-spacing: 0.05em;
+    padding: 0; margin-top: 16px; display: block;
+    text-decoration: underline; text-underline-offset: 4px;
+  }
+  .brew-toggle:hover { color: var(--terracotta-deep); }
+  .brew-recipe {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(42, 24, 16, 0.12);
+  }
+  .brew-recipe.open { display: block; }
+  .brew-recipe .brew-method { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bean-soft); margin-bottom: 12px; }
+  .brew-recipe .brew-specs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 14px; }
+  .brew-recipe .brew-spec-item { background: var(--cream-deep); padding: 10px 12px; }
+  .brew-recipe .brew-spec-item .spec-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bean-soft); margin-bottom: 2px; }
+  .brew-recipe .brew-spec-item .spec-value { font-family: 'Fraunces', serif; font-size: 16px; color: var(--bean); }
+  .brew-recipe .brew-note { font-size: 13px; color: var(--bean-soft); font-style: italic; line-height: 1.6; }
 
   /* Responsive */
   @media (max-width: 900px) {
@@ -360,6 +381,17 @@
       </div>
       <div class="price">₱520 <small>/ 200g</small></div>
       <a href="#order" class="btn-primary">Order now</a>
+      <button class="brew-toggle" onclick="toggleRecipe(this)">View brew recipe ↓</button>
+      <div class="brew-recipe">
+        <div class="brew-method">Pour over dripper</div>
+        <div class="brew-specs">
+          <div class="brew-spec-item"><div class="spec-label">Grind</div><div class="spec-value">Medium</div></div>
+          <div class="brew-spec-item"><div class="spec-label">Water temp</div><div class="spec-value">93°C</div></div>
+          <div class="brew-spec-item"><div class="spec-label">Ratio</div><div class="spec-value">1 : 16</div></div>
+          <div class="brew-spec-item"><div class="spec-label">Brew time</div><div class="spec-value">3 min</div></div>
+        </div>
+        <div class="brew-note">"A steady, slow pour draws out the chocolate body and lets the almond finish linger."</div>
+      </div>
     </div>
 
     <div class="catalog-card coming-soon">
@@ -374,6 +406,17 @@
       </div>
       <div class="price">₱400 <small>/ 200g</small></div>
       <div class="coming-label">Releasing next week — stay tuned.</div>
+      <button class="brew-toggle" onclick="toggleRecipe(this)">View brew recipe ↓</button>
+      <div class="brew-recipe">
+        <div class="brew-method">Pour over dripper</div>
+        <div class="brew-specs">
+          <div class="brew-spec-item"><div class="spec-label">Grind</div><div class="spec-value">Medium-fine</div></div>
+          <div class="brew-spec-item"><div class="spec-label">Water temp</div><div class="spec-value">90°C</div></div>
+          <div class="brew-spec-item"><div class="spec-label">Ratio</div><div class="spec-value">1 : 15</div></div>
+          <div class="brew-spec-item"><div class="spec-label">Brew time</div><div class="spec-value">3:30 min</div></div>
+        </div>
+        <div class="brew-note">"Lower temp and a finer grind coax the fruity and spice notes out of this light Excelsa."</div>
+      </div>
     </div>
 
   </div>
@@ -473,5 +516,12 @@
   <p style="margin-top: 12px; font-size: 11px; opacity: 0.5;">© 2026 aslom. Roasted with patience.</p>
 </footer>
 
+<script>
+  function toggleRecipe(btn) {
+    const recipe = btn.nextElementSibling;
+    const isOpen = recipe.classList.toggle('open');
+    btn.textContent = isOpen ? 'Hide brew recipe ↑' : 'View brew recipe ↓';
+  }
+</script>
 </body>
 </html>
