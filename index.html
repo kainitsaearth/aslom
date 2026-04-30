@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mt. Apo Reserve — Kapé Roasters</title>
+<meta name="description" content="Single-origin Arabica from the volcanic slopes of Davao. Slow-roasted in small batches.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #F4EDE0;
+    --cream-deep: #E8DDC7;
+    --bean: #2A1810;
+    --bean-soft: #4A2C1F;
+    --terracotta: #B8542C;
+    --terracotta-deep: #8B3E1F;
+    --ink: #1C1410;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .display { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.02em; }
+  .label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bean-soft); }
+
+  /* Navigation */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5vw;
+    background: rgba(244, 237, 224, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(42, 24, 16, 0.08);
+  }
+  nav .brand { font-family: 'Fraunces', serif; font-size: 22px; font-style: italic; color: var(--bean); }
+  nav ul { display: flex; gap: 32px; list-style: none; }
+  nav a { color: var(--bean-soft); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+  nav a:hover { color: var(--terracotta); }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 5vw 80px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 30%; right: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(184, 84, 44, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-text { position: relative; z-index: 2; }
+  .hero .label { margin-bottom: 24px; display: block; animation: fadeUp 0.8s 0.1s both; }
+  .hero h1 {
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.95;
+    color: var(--bean);
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.2s both;
+  }
+  .hero h1 em { font-style: italic; color: var(--terracotta); }
+  .hero .lede {
+    font-size: 19px;
+    color: var(--bean-soft);
+    max-width: 460px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.3s both;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; animation: fadeUp 0.8s 0.4s both; }
+  .btn-primary {
+    background: var(--bean);
+    color: var(--cream);
+    padding: 16px 32px;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--terracotta); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--bean);
+    padding: 16px 0;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    animation: fadeUp 1s 0.5s both;
+  }
+  .bag {
+    position: absolute; inset: 10%;
+    background: linear-gradient(170deg, var(--bean-soft), var(--bean));
+    border-radius: 8px 8px 4px 4px;
+    box-shadow: 0 30px 60px -20px rgba(42, 24, 16, 0.4), inset 0 -8px 20px rgba(0,0,0,0.2);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 40px 30px;
+    color: var(--cream);
+  }
+  .bag::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 50px;
+    background: var(--ink);
+    border-radius: 8px 8px 0 0;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.5);
+  }
+  .bag-label {
+    background: var(--cream);
+    color: var(--bean);
+    padding: 24px 20px;
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    border-radius: 2px;
+  }
+  .bag-label .small { font-size: 10px; letter-spacing: 0.3em; color: var(--terracotta); }
+  .bag-label .name { font-family: 'Fraunces', serif; font-size: 22px; margin: 6px 0; line-height: 1.1; }
+  .bag-label .name em { font-style: italic; }
+  .bag-info { margin-top: auto; text-align: center; font-size: 11px; letter-spacing: 0.2em; color: rgba(244, 237, 224, 0.7); }
+
+  /* Story section */
+  .story {
+    padding: 120px 5vw;
+    background: var(--cream-deep);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .story h2 { font-size: clamp(36px, 4vw, 56px); line-height: 1.05; color: var(--bean); margin-bottom: 24px; }
+  .story h2 em { font-style: italic; color: var(--terracotta-deep); }
+  .story p { font-size: 17px; color: var(--bean-soft); margin-bottom: 16px; }
+  .story-stat {
+    background: var(--cream);
+    padding: 32px;
+    border-left: 3px solid var(--terracotta);
+    margin-top: 32px;
+  }
+  .story-stat .number { font-family: 'Fraunces', serif; font-size: 42px; color: var(--bean); }
+  .story-stat .desc { font-size: 14px; color: var(--bean-soft); margin-top: 4px; }
+
+  /* Tasting notes */
+  .notes { padding: 120px 5vw; }
+  .notes-header { text-align: center; margin-bottom: 60px; }
+  .notes-header h2 { font-size: clamp(36px, 4vw, 56px); color: var(--bean); margin-top: 12px; }
+  .notes-header h2 em { font-style: italic; color: var(--terracotta); }
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .note-card {
+    border: 1px solid rgba(42, 24, 16, 0.15);
+    padding: 32px 24px;
+    background: var(--cream);
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .note-card:hover { transform: translateY(-4px); border-color: var(--terracotta); }
+  .note-card .icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--cream-deep);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-family: 'Fraunces', serif; font-size: 20px; font-style: italic;
+    color: var(--terracotta-deep);
+  }
+  .note-card h3 { font-family: 'Fraunces', serif; font-size: 22px; color: var(--bean); margin-bottom: 6px; }
+  .note-card .label { display: block; }
+
+  /* Brew section */
+  .brew {
+    padding: 120px 5vw;
+    background: var(--bean);
+    color: var(--cream);
+  }
+  .brew-header { text-align: center; margin-bottom: 60px; }
+  .brew-header h2 { font-size: clamp(36px, 4vw, 56px); margin-top: 12px; }
+  .brew-header h2 em { font-style: italic; color: #E8945F; }
+  .brew-header .label { color: rgba(244, 237, 224, 0.6); }
+  .brew-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
+  .brew-card {
+    border: 1px solid rgba(244, 237, 224, 0.15);
+    padding: 40px 32px;
+    transition: background 0.3s;
+  }
+  .brew-card:hover { background: rgba(244, 237, 224, 0.04); }
+  .brew-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: #E8945F; margin-bottom: 20px; }
+  .brew-card h3 { font-family: 'Fraunces', serif; font-size: 28px; margin-bottom: 12px; }
+  .brew-card p { color: rgba(244, 237, 224, 0.7); font-size: 14px; line-height: 1.7; }
+  .brew-spec { display: flex; gap: 24px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(244, 237, 224, 0.1); font-size: 12px; color: rgba(244, 237, 224, 0.5); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* CTA */
+  .cta {
+    padding: 120px 5vw;
+    text-align: center;
+    background: var(--cream-deep);
+    position: relative;
+  }
+  .cta h2 { font-size: clamp(40px, 5vw, 72px); color: var(--bean); margin-bottom: 16px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.05; }
+  .cta h2 em { font-style: italic; color: var(--terracotta-deep); }
+  .cta p { font-size: 18px; color: var(--bean-soft); margin-bottom: 40px; }
+  .price-box {
+    display: inline-flex; align-items: baseline; gap: 12px;
+    margin-bottom: 32px;
+  }
+  .price-box .amount { font-family: 'Fraunces', serif; font-size: 56px; color: var(--bean); }
+  .price-box .unit { font-size: 14px; color: var(--bean-soft); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* Footer */
+  footer {
+    padding: 60px 5vw 40px;
+    background: var(--ink);
+    color: rgba(244, 237, 224, 0.6);
+    text-align: center;
+    font-size: 13px;
+  }
+  footer .brand-foot { font-family: 'Fraunces', serif; font-style: italic; font-size: 24px; color: var(--cream); margin-bottom: 12px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    nav ul { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 100px; }
+    .hero-visual { max-width: 320px; margin: 0 auto; }
+    .story { grid-template-columns: 1fr; gap: 40px; padding: 80px 5vw; }
+    .notes-grid { grid-template-columns: repeat(2, 1fr); }
+    .brew-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 500px) {
+    .notes-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Kapé Roasters</div>
+  <ul>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#notes">Tasting</a></li>
+    <li><a href="#brew">Brew guide</a></li>
+    <li><a href="#order">Order</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <span class="label">Single origin · Medium roast</span>
+    <h1>Mt. Apo<br><em>Reserve</em></h1>
+    <p class="lede">Hand-picked Arabica grown 1,400 meters up the volcanic slopes of Davao. Slow-roasted in small batches to reveal dark chocolate, toasted almond, and ripe cherry.</p>
+    <div class="hero-actions">
+      <a href="#order" class="btn-primary">Order a bag</a>
+      <a href="#story" class="btn-secondary">Read the story →</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="bag">
+      <div class="bag-label">
+        <div class="small">DAVAO · PHILIPPINES</div>
+        <div class="name">Mt. Apo<br><em>Reserve</em></div>
+        <div class="small">250G · WHOLE BEAN</div>
+      </div>
+      <div class="bag-info">ROASTED 04 / 26 · KAPÉ CO.</div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div>
+    <span class="label">Our farmers</span>
+    <h2>Grown where the <em>clouds rest</em>.</h2>
+    <p>Mt. Apo is the highest peak in the Philippines. Its volcanic soil, cool mist, and unhurried sun make it one of the rarest places on earth to grow Arabica.</p>
+    <p>We work directly with twelve smallholder families who have farmed these slopes for three generations. No middlemen. Fair trade prices, paid in advance.</p>
+    <div class="story-stat">
+      <div class="number">1,400<span style="font-size: 20px; color: var(--bean-soft)">m</span></div>
+      <div class="desc">Average altitude — the sweet spot for slow-maturing, dense, complex beans.</div>
+    </div>
+  </div>
+  <div>
+    <div style="background: linear-gradient(135deg, var(--terracotta), var(--terracotta-deep)); aspect-ratio: 4/5; border-radius: 4px; position: relative; overflow: hidden;">
+      <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at top, rgba(244, 237, 224, 0.15), transparent 60%);"></div>
+      <div style="position: absolute; bottom: 30px; left: 30px; right: 30px; color: var(--cream); font-family: 'Fraunces', serif; font-style: italic; font-size: 28px; line-height: 1.3;">"The mountain decides when the cherries are ready. We just listen."</div>
+      <div style="position: absolute; bottom: 30px; right: 30px; font-size: 12px; letter-spacing: 0.2em; color: rgba(244, 237, 224, 0.7);">— TATA REY, FARMER</div>
+    </div>
+  </div>
+</section>
+
+<section class="notes" id="notes">
+  <div class="notes-header">
+    <span class="label">In the cup</span>
+    <h2>Notes of <em>warmth</em>.</h2>
+  </div>
+  <div class="notes-grid">
+    <div class="note-card">
+      <div class="icon">D</div>
+      <h3>Dark chocolate</h3>
+      <span class="label">Body</span>
+    </div>
+    <div class="note-card">
+      <div class="icon">A</div>
+      <h3>Toasted almond</h3>
+      <span class="label">Aroma</span>
+    </div>
+    <div class="note-card">
+      <div class="icon">C</div>
+      <h3>Ripe cherry</h3>
+      <span class="label">Finish</span>
+    </div>
+    <div class="note-card">
+      <div class="icon">L</div>
+      <h3>Low acidity</h3>
+      <span class="label">Mouthfeel</span>
+    </div>
+  </div>
+</section>
+
+<section class="brew" id="brew">
+  <div class="brew-header">
+    <span class="label">How to brew</span>
+    <h2>Three ways to <em>meet the bean</em>.</h2>
+  </div>
+  <div class="brew-grid">
+    <div class="brew-card">
+      <div class="brew-num">No. 01</div>
+      <h3>French press</h3>
+      <p>Coarse, deliberate. Lets the oils carry every layer of chocolate and stone fruit straight to the cup.</p>
+      <div class="brew-spec"><span>Coarse grind</span><span>4 min</span><span>1:15 ratio</span></div>
+    </div>
+    <div class="brew-card">
+      <div class="brew-num">No. 02</div>
+      <h3>Pour over</h3>
+      <p>Clean and clarifying. Gives you the full arc — almond on the nose, cherry on the way out.</p>
+      <div class="brew-spec"><span>Medium grind</span><span>3 min</span><span>1:16 ratio</span></div>
+    </div>
+    <div class="brew-card">
+      <div class="brew-num">No. 03</div>
+      <h3>Espresso</h3>
+      <p>Concentrated, jammy, dense. The roast is built for milk drinks but holds its own as a straight shot.</p>
+      <div class="brew-spec"><span>Fine grind</span><span>25 sec</span><span>1:2 ratio</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="order">
+  <span class="label">Roasted weekly · ships nationwide</span>
+  <h2>Brew something <em>worth slowing down for</em>.</h2>
+  <p>Free shipping on orders over ₱1,500. Subscribe and save 15%.</p>
+  <div class="price-box">
+    <div class="amount">₱520</div>
+    <div class="unit">/ 250g bag</div>
+  </div>
+  <br>
+  <a href="mailto:hello@kaperoasters.ph?subject=Order: Mt. Apo Reserve" class="btn-primary">Order Mt. Apo Reserve</a>
+</section>
+
+<footer>
+  <div class="brand-foot">Kapé Roasters</div>
+  <p>Davao City, Philippines · hello@kaperoasters.ph</p>
+  <p style="margin-top: 12px; font-size: 11px; opacity: 0.5;">© 2026 Kapé Roasters. Roasted with patience.</p>
+</footer>
+
+</body>
+</html>
