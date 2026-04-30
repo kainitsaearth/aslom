@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lanao Reserve — aslom</title>
+<title>Amai Manabilang — aslom</title>
 <meta name="description" content="Single-origin Arabica from the volcanic slopes of Davao. Slow-roasted in small batches.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -337,6 +337,27 @@
   .brew-recipe .brew-spec-item .spec-value { font-family: 'Fraunces', serif; font-size: 16px; color: var(--bean); }
   .brew-recipe .brew-note { font-size: 13px; color: var(--bean-soft); font-style: italic; line-height: 1.6; }
 
+  /* Learn Coffee */
+  .learn { padding: 120px 5vw; background: var(--cream-deep); }
+  .learn-header { text-align: center; margin-bottom: 60px; }
+  .learn-header h2 { font-size: clamp(36px, 4vw, 56px); color: var(--bean); margin-top: 12px; }
+  .learn-header h2 em { font-style: italic; color: var(--terracotta); }
+  .learn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1100px; margin: 0 auto; }
+  .learn-card {
+    background: var(--cream);
+    padding: 36px 32px;
+    border: 1px solid rgba(42, 24, 16, 0.1);
+    text-decoration: none;
+    color: inherit;
+    display: flex; flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .learn-card:hover { transform: translateY(-4px); border-color: var(--terracotta); }
+  .learn-card .tag { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px; }
+  .learn-card h3 { font-family: 'Fraunces', serif; font-size: 24px; color: var(--bean); line-height: 1.2; margin-bottom: 12px; }
+  .learn-card p { font-size: 14px; color: var(--bean-soft); line-height: 1.7; flex: 1; }
+  .learn-card .read-more { margin-top: 24px; font-size: 13px; color: var(--terracotta); letter-spacing: 0.05em; }
+
   /* Responsive */
   @media (max-width: 900px) {
     nav ul { display: none; }
@@ -345,6 +366,7 @@
     .hero-visual { max-width: 320px; margin: 0 auto; }
     .story { grid-template-columns: 1fr; gap: 40px; padding: 80px 5vw; }
     .catalog-grid { grid-template-columns: 1fr; }
+    .learn-grid { grid-template-columns: 1fr; }
     .notes-grid { grid-template-columns: repeat(2, 1fr); }
     .brew-grid { grid-template-columns: 1fr; }
   }
@@ -359,29 +381,29 @@
   <div class="brand">aslom</div>
   <ul>
     <li><a href="#coffees">Coffees</a></li>
-    <li><a href="#story">Story</a></li>
+    <li><a href="#learn">Learn</a></li>
     <li><a href="#order">Order</a></li>
   </ul>
 </nav>
 
 <section class="hero">
 
-  <!-- Slide 1: Lanao Reserve -->
+  <!-- Slide 1: Amai Manabilang -->
   <div class="hero-slide active">
     <div class="hero-text">
-      <span class="label">Single origin · Medium roast</span>
-      <h1>Lanao<br><em>Reserve</em></h1>
-      <p class="lede">Hand-picked Arabica grown 1,400 meters up the volcanic slopes of Davao. Slow-roasted in small batches to reveal dark chocolate, toasted almond, and ripe cherry.</p>
+      <span class="label">Arabica · Medium roast · St. Mary of Downtown Farmers</span>
+      <h1>Amai<br><em>Manabilang</em></h1>
+      <p class="lede">From the SMD Farmers Organization Inc. — a coffee-growing cooperative in the highlands of Amai Manabilang (formerly Bumbaran), Lanao del Sur. Notes of ripe cherry, black tea, and apple.</p>
       <div class="hero-actions">
         <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order a bag</a>
-        <a href="#story" class="btn-secondary">Read the story →</a>
+        <a href="#coffees" class="btn-secondary">See the library →</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="bag">
         <div class="bag-label">
-          <div class="small">DAVAO · PHILIPPINES</div>
-          <div class="name">Lanao<br><em>Reserve</em></div>
+          <div class="small">LANAO DEL SUR · PHILIPPINES</div>
+          <div class="name">Amai<br><em>Manabilang</em></div>
           <div class="small">200G · WHOLE BEAN</div>
         </div>
         <div class="bag-info">ROASTED 04 / 26 · ASLOM</div>
@@ -429,15 +451,15 @@
 
     <div class="catalog-card">
       <span class="catalog-badge available">Available</span>
-      <div class="origin">Lanao · Philippines</div>
-      <h3>Lanao<br><em>Reserve</em></h3>
-      <div class="roast">Arabica · Medium roast</div>
+      <div class="origin">Amai Manabilang, Lanao del Sur · Philippines</div>
+      <h3>Amai<br><em>Manabilang</em></h3>
+      <div class="roast">Arabica · Medium roast · SMD Farmers</div>
       <div class="tasting">
-        <span>Dark chocolate</span>
-        <span>Toasted almond</span>
         <span>Ripe cherry</span>
+        <span>Black tea</span>
+        <span>Apple</span>
       </div>
-      <div class="price">₱520 <small>/ 200g</small></div>
+      <div class="price">₱400 <small>/ 200g</small></div>
       <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order now</a>
       <button class="brew-toggle" onclick="toggleRecipe(this)">View brew recipe ↓</button>
       <div class="brew-recipe">
@@ -448,7 +470,7 @@
           <div class="brew-spec-item"><div class="spec-label">Ratio</div><div class="spec-value">1 : 16</div></div>
           <div class="brew-spec-item"><div class="spec-label">Brew time</div><div class="spec-value">3 min</div></div>
         </div>
-        <div class="brew-note">"A steady, slow pour draws out the chocolate body and lets the almond finish linger."</div>
+        <div class="brew-note">"A steady pour reveals ripe cherry brightness and a clean black tea finish."</div>
       </div>
     </div>
 
@@ -480,33 +502,45 @@
   </div>
 </section>
 
-<section class="story" id="story">
-  <div>
-    <span class="label">Our farmers</span>
-    <h2>Grown where the <em>clouds rest</em>.</h2>
-    <p>Lanao is the highest peak in the Philippines. Its volcanic soil, cool mist, and unhurried sun make it one of the rarest places on earth to grow Arabica.</p>
-    <p>We work directly with twelve smallholder families who have farmed these slopes for three generations. No middlemen. Fair trade prices, paid in advance.</p>
-    <div class="story-stat">
-      <div class="number">1,400<span style="font-size: 20px; color: var(--bean-soft)">m</span></div>
-      <div class="desc">Average altitude — the sweet spot for slow-maturing, dense, complex beans.</div>
-    </div>
+
+
+<section class="learn" id="learn">
+  <div class="learn-header">
+    <span class="label">Free resources</span>
+    <h2>Learn <em>Coffee</em>.</h2>
   </div>
-  <div>
-    <div style="background: linear-gradient(135deg, var(--terracotta), var(--terracotta-deep)); aspect-ratio: 4/5; border-radius: 4px; position: relative; overflow: hidden;">
-      <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at top, rgba(244, 237, 224, 0.15), transparent 60%);"></div>
-      <div style="position: absolute; bottom: 30px; left: 30px; right: 30px; color: var(--cream); font-family: 'Fraunces', serif; font-style: italic; font-size: 28px; line-height: 1.3;">"The mountain decides when the cherries are ready. We just listen."</div>
-      <div style="position: absolute; bottom: 30px; right: 30px; font-size: 12px; letter-spacing: 0.2em; color: rgba(244, 237, 224, 0.7);">— TATA REY, FARMER</div>
-    </div>
+  <div class="learn-grid">
+
+    <a href="learn/what-is-specialty-coffee.html" class="learn-card">
+      <div class="tag">The Basics</div>
+      <h3>What is Specialty Coffee?</h3>
+      <p>Not all coffee is created equal. Learn what separates specialty-grade beans from the rest — and why it matters in your cup.</p>
+      <div class="read-more">Read more →</div>
+    </a>
+
+    <a href="learn/arabica-vs-robusta.html" class="learn-card">
+      <div class="tag">Coffee Species</div>
+      <h3>Arabica vs Robusta</h3>
+      <p>Two species, two very different cups. Understand the key differences in flavor, caffeine, altitude, and why most specialty roasters choose Arabica.</p>
+      <div class="read-more">Read more →</div>
+    </a>
+
+    <a href="learn/natural-honey-washed.html" class="learn-card">
+      <div class="tag">Processing</div>
+      <h3>Natural, Honey & Washed</h3>
+      <p>The way a coffee cherry is processed after harvest has a huge impact on flavor. Discover the three main methods and what each brings to the cup.</p>
+      <div class="read-more">Read more →</div>
+    </a>
+
   </div>
 </section>
-
 
 <section class="cta" id="order">
   <span class="label">Roasted weekly · ships nationwide</span>
   <h2>Brew something <em>worth slowing down for</em>.</h2>
   <p>Free shipping on orders over ₱1,500. Subscribe and save 15%.</p>
   <div class="price-box">
-    <div class="amount">₱520</div>
+    <div class="amount">₱400</div>
     <div class="unit">/ 200g bag</div>
   </div>
   <br>

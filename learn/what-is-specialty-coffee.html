@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is Specialty Coffee? — aslom Learn Coffee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F4EDE0; --cream-deep: #E8DDC7;
+    --bean: #2A1810; --bean-soft: #4A2C1F;
+    --terracotta: #B8542C; --terracotta-deep: #8B3E1F;
+    --ink: #1C1410;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5vw;
+    background: rgba(244, 237, 224, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(42, 24, 16, 0.08);
+  }
+  nav .brand { font-family: 'Fraunces', serif; font-size: 22px; font-style: italic; color: var(--bean); text-decoration: none; }
+  nav .back { font-size: 13px; color: var(--bean-soft); text-decoration: none; }
+  nav .back:hover { color: var(--terracotta); }
+
+  .article-hero {
+    padding: 140px 5vw 60px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .article-tag { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); display: block; margin-bottom: 20px; }
+  .article-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; color: var(--bean); margin-bottom: 20px; }
+  .article-hero h1 em { font-style: italic; color: var(--terracotta); }
+  .article-intro { font-size: 19px; color: var(--bean-soft); border-left: 3px solid var(--terracotta); padding-left: 20px; }
+
+  .article-body { max-width: 780px; margin: 0 auto; padding: 0 5vw 100px; }
+  .article-body h2 { font-family: 'Fraunces', serif; font-size: 28px; color: var(--bean); margin: 48px 0 16px; }
+  .article-body h2 em { font-style: italic; color: var(--terracotta-deep); }
+  .article-body p { font-size: 17px; color: var(--bean-soft); margin-bottom: 20px; line-height: 1.8; }
+  .article-body ul { margin: 0 0 20px 20px; }
+  .article-body ul li { font-size: 17px; color: var(--bean-soft); line-height: 1.8; margin-bottom: 8px; }
+  .callout {
+    background: var(--cream-deep);
+    border-left: 3px solid var(--terracotta);
+    padding: 24px 28px;
+    margin: 32px 0;
+    font-size: 16px;
+    color: var(--bean);
+    font-style: italic;
+  }
+  .article-nav { display: flex; gap: 16px; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(42, 24, 16, 0.1); flex-wrap: wrap; }
+  .article-nav a {
+    background: var(--bean); color: var(--cream);
+    padding: 14px 28px; text-decoration: none;
+    font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .article-nav a:hover { background: var(--terracotta); }
+  .article-nav a.secondary { background: transparent; color: var(--bean); border: 1px solid rgba(42,24,16,0.2); }
+  .article-nav a.secondary:hover { border-color: var(--terracotta); color: var(--terracotta); background: transparent; }
+
+  footer { padding: 40px 5vw; background: var(--ink); color: rgba(244,237,224,0.6); text-align: center; font-size: 13px; }
+  footer .brand-foot { font-family: 'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--cream); margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="brand">aslom</a>
+  <a href="../index.html#learn" class="back">← Back to Learn Coffee</a>
+</nav>
+
+<div class="article-hero">
+  <span class="article-tag">The Basics</span>
+  <h1>What is <em>Specialty Coffee</em>?</h1>
+  <p class="article-intro">Not all coffee is created equal. Specialty coffee is the top tier of the coffee world — and once you taste the difference, there's no going back.</p>
+</div>
+
+<div class="article-body">
+
+  <h2>It starts with a <em>score</em>.</h2>
+  <p>Specialty coffee is officially defined as coffee that scores 80 points or above on a 100-point scale, as evaluated by a certified Q Grader — a trained sensory professional. The score is based on attributes like aroma, flavor, aftertaste, acidity, body, balance, and the absence of defects.</p>
+  <p>Anything below 80 is considered commercial-grade coffee — the kind most commonly used in instant blends, canned coffee, and mass-market brands. It is not bad, but it is not specialty.</p>
+
+  <div class="callout">"Specialty coffee scored between 80–84.99 is considered 'Very Good.' 85–89.99 is 'Excellent.' 90 and above is 'Outstanding' — extremely rare."</div>
+
+  <h2>The full <em>chain matters</em>.</h2>
+  <p>A high score alone is not enough. Specialty coffee is defined by a commitment to quality at every step of the supply chain:</p>
+  <ul>
+    <li><strong>Farmers</strong> — selective hand-picking of only ripe cherries, careful processing</li>
+    <li><strong>Exporters &amp; importers</strong> — proper storage, green grading, fair contracts</li>
+    <li><strong>Roasters</strong> — small-batch roasting designed to highlight the bean's origin character</li>
+    <li><strong>Baristas</strong> — precise brewing to bring out the intended flavor</li>
+  </ul>
+  <p>Break the chain at any point — bad storage, over-roasting, careless brewing — and even a 90-point bean can taste ordinary.</p>
+
+  <h2>Why does it <em>taste different</em>?</h2>
+  <p>Commercial coffee is often blended from many origins to produce a consistent, neutral flavor. Specialty coffee celebrates the opposite: the unique characteristics of a single origin, a single farm, or even a single lot.</p>
+  <p>Altitude, soil, rainfall, processing method, and variety all leave their fingerprint in the cup. A highland Arabica from Lanao del Sur will taste nothing like one from Ethiopia or Colombia — and that's the point.</p>
+
+  <h2>The Philippines and <em>specialty coffee</em>.</h2>
+  <p>The Philippines has four commercially grown coffee species: Arabica, Robusta, Liberica (Barako), and Excelsa. The specialty coffee movement here is still young, but the country's highland regions — Benguet, Bukidnon, Mt. Apo, Lanao del Sur — are producing beans that are beginning to attract serious attention from the global coffee community.</p>
+  <p>Cooperatives like the St. Mary of Downtown Farmers (SMD) in Amai Manabilang, Lanao del Sur are at the forefront of this movement — growing with care, processing with intention, and proving that world-class coffee can come from Philippine soil.</p>
+
+  <div class="callout">"Specialty coffee is not a price point or a brand. It is a standard — earned by every person who touched the bean before it reached your cup."</div>
+
+  <div class="article-nav">
+    <a href="arabica-vs-robusta.html">Next: Arabica vs Robusta →</a>
+    <a href="../index.html#learn" class="secondary">Back to Learn Coffee</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="brand-foot">aslom</div>
+  <p>© 2026 aslom. Roasted with patience.</p>
+</footer>
+
+</body>
+</html>
