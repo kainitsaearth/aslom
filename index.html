@@ -252,12 +252,52 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* Catalog */
+  .catalog { padding: 120px 5vw; background: var(--cream); }
+  .catalog-header { text-align: center; margin-bottom: 60px; }
+  .catalog-header h2 { font-size: clamp(36px, 4vw, 56px); color: var(--bean); margin-top: 12px; }
+  .catalog-header h2 em { font-style: italic; color: var(--terracotta); }
+  .catalog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 900px; margin: 0 auto; }
+  .catalog-card {
+    border: 1px solid rgba(42, 24, 16, 0.15);
+    padding: 40px 36px;
+    background: var(--cream);
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative;
+  }
+  .catalog-card:hover { transform: translateY(-4px); border-color: var(--terracotta); }
+  .catalog-card.coming-soon { opacity: 0.75; }
+  .catalog-card.coming-soon:hover { transform: none; border-color: rgba(42, 24, 16, 0.15); }
+  .catalog-badge {
+    position: absolute; top: 20px; right: 20px;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--terracotta);
+    color: var(--terracotta);
+  }
+  .catalog-badge.available { border-color: var(--bean); color: var(--bean); }
+  .catalog-card .origin { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+  .catalog-card h3 { font-family: 'Fraunces', serif; font-size: 32px; color: var(--bean); line-height: 1.1; margin-bottom: 6px; }
+  .catalog-card h3 em { font-style: italic; }
+  .catalog-card .roast { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bean-soft); margin-bottom: 20px; }
+  .catalog-card .tasting { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .catalog-card .tasting span {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 10px;
+    background: var(--cream-deep);
+    color: var(--bean-soft);
+  }
+  .catalog-card .price { font-family: 'Fraunces', serif; font-size: 28px; color: var(--bean); margin-bottom: 20px; }
+  .catalog-card .price small { font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--bean-soft); letter-spacing: 0.1em; text-transform: uppercase; }
+  .catalog-card .coming-label { font-size: 13px; color: var(--bean-soft); font-style: italic; margin-top: 8px; }
+
   /* Responsive */
   @media (max-width: 900px) {
     nav ul { display: none; }
     .hero { grid-template-columns: 1fr; padding-top: 100px; }
     .hero-visual { max-width: 320px; margin: 0 auto; }
     .story { grid-template-columns: 1fr; gap: 40px; padding: 80px 5vw; }
+    .catalog-grid { grid-template-columns: 1fr; }
     .notes-grid { grid-template-columns: repeat(2, 1fr); }
     .brew-grid { grid-template-columns: 1fr; }
   }
@@ -271,6 +311,7 @@
 <nav>
   <div class="brand">aslom</div>
   <ul>
+    <li><a href="#coffees">Coffees</a></li>
     <li><a href="#story">Story</a></li>
     <li><a href="#notes">Tasting</a></li>
     <li><a href="#brew">Brew guide</a></li>
@@ -297,6 +338,44 @@
       </div>
       <div class="bag-info">ROASTED 04 / 26 · ASLOM</div>
     </div>
+  </div>
+</section>
+
+<section class="catalog" id="coffees">
+  <div class="catalog-header">
+    <span class="label">Our origins</span>
+    <h2>The <em>library</em>.</h2>
+  </div>
+  <div class="catalog-grid">
+
+    <div class="catalog-card">
+      <span class="catalog-badge available">Available</span>
+      <div class="origin">Lanao · Philippines</div>
+      <h3>Lanao<br><em>Reserve</em></h3>
+      <div class="roast">Arabica · Medium roast</div>
+      <div class="tasting">
+        <span>Dark chocolate</span>
+        <span>Toasted almond</span>
+        <span>Ripe cherry</span>
+      </div>
+      <div class="price">₱520 <small>/ 200g</small></div>
+      <a href="#order" class="btn-primary">Order now</a>
+    </div>
+
+    <div class="catalog-card coming-soon">
+      <span class="catalog-badge">Coming Soon</span>
+      <div class="origin">Magsaysay, Davao del Sur · Philippines</div>
+      <h3>Magsaysay<br><em>Filter</em></h3>
+      <div class="roast">Excelsa · Light roast</div>
+      <div class="tasting">
+        <span>Fruity</span>
+        <span>Sweet</span>
+        <span>Spice</span>
+      </div>
+      <div class="price">₱400 <small>/ 200g</small></div>
+      <div class="coming-label">Releasing next week — stay tuned.</div>
+    </div>
+
   </div>
 </section>
 
