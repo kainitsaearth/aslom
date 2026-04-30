@@ -50,41 +50,62 @@
   nav a { color: var(--bean-soft); text-decoration: none; font-size: 14px; transition: color 0.2s; }
   nav a:hover { color: var(--terracotta); }
 
-  /* Hero */
+  /* Hero slider */
   .hero {
     min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-slide {
+    position: absolute; inset: 0;
     padding: 140px 5vw 80px;
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     gap: 60px;
     align-items: center;
-    position: relative;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    pointer-events: none;
   }
-  .hero::before {
+  .hero-slide::before {
     content: '';
     position: absolute; top: 30%; right: -10%;
     width: 500px; height: 500px;
     background: radial-gradient(circle, rgba(184, 84, 44, 0.12), transparent 70%);
     pointer-events: none;
   }
+  .hero-slide.active { opacity: 1; pointer-events: auto; }
+  .hero-dots {
+    position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 10px; z-index: 10;
+  }
+  .hero-dots .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(42, 24, 16, 0.25);
+    border: none; cursor: pointer; padding: 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .hero-dots .dot.active { background: var(--terracotta); transform: scale(1.3); }
   .hero-text { position: relative; z-index: 2; }
-  .hero .label { margin-bottom: 24px; display: block; animation: fadeUp 0.8s 0.1s both; }
+  .hero-slide .label { margin-bottom: 24px; display: block; }
+  .hero-slide.active .label { animation: fadeUp 0.8s 0.1s both; }
   .hero h1 {
     font-size: clamp(48px, 7vw, 96px);
     line-height: 0.95;
     color: var(--bean);
     margin-bottom: 28px;
-    animation: fadeUp 0.8s 0.2s both;
   }
+  .hero-slide.active h1 { animation: fadeUp 0.8s 0.2s both; }
   .hero h1 em { font-style: italic; color: var(--terracotta); }
   .hero .lede {
     font-size: 19px;
     color: var(--bean-soft);
     max-width: 460px;
     margin-bottom: 40px;
-    animation: fadeUp 0.8s 0.3s both;
   }
-  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; animation: fadeUp 0.8s 0.4s both; }
+  .hero-slide.active .lede { animation: fadeUp 0.8s 0.3s both; }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .hero-slide.active .hero-actions { animation: fadeUp 0.8s 0.4s both; }
   .btn-primary {
     background: var(--bean);
     color: var(--cream);
@@ -116,8 +137,12 @@
   .hero-visual {
     position: relative;
     aspect-ratio: 4/5;
-    animation: fadeUp 1s 0.5s both;
   }
+  .hero-slide.active .hero-visual { animation: fadeUp 1s 0.5s both; }
+  .bag.light {
+    background: linear-gradient(170deg, #C8A882, #A07850);
+  }
+  .bag.light::before { background: #7A5535; }
   .bag {
     position: absolute; inset: 10%;
     background: linear-gradient(170deg, var(--bean-soft), var(--bean));
@@ -315,7 +340,8 @@
   /* Responsive */
   @media (max-width: 900px) {
     nav ul { display: none; }
-    .hero { grid-template-columns: 1fr; padding-top: 100px; }
+    .hero { min-height: 100vh; }
+    .hero-slide { grid-template-columns: 1fr; padding-top: 100px; }
     .hero-visual { max-width: 320px; margin: 0 auto; }
     .story { grid-template-columns: 1fr; gap: 40px; padding: 80px 5vw; }
     .catalog-grid { grid-template-columns: 1fr; }
@@ -334,32 +360,64 @@
   <ul>
     <li><a href="#coffees">Coffees</a></li>
     <li><a href="#story">Story</a></li>
-    <li><a href="#notes">Tasting</a></li>
-    <li><a href="#brew">Brew guide</a></li>
     <li><a href="#order">Order</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-text">
-    <span class="label">Single origin · Medium roast</span>
-    <h1>Lanao<br><em>Reserve</em></h1>
-    <p class="lede">Hand-picked Arabica grown 1,400 meters up the volcanic slopes of Davao. Slow-roasted in small batches to reveal dark chocolate, toasted almond, and ripe cherry.</p>
-    <div class="hero-actions">
-      <a href="#order" class="btn-primary">Order a bag</a>
-      <a href="#story" class="btn-secondary">Read the story →</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="bag">
-      <div class="bag-label">
-        <div class="small">DAVAO · PHILIPPINES</div>
-        <div class="name">Lanao<br><em>Reserve</em></div>
-        <div class="small">200G · WHOLE BEAN</div>
+
+  <!-- Slide 1: Lanao Reserve -->
+  <div class="hero-slide active">
+    <div class="hero-text">
+      <span class="label">Single origin · Medium roast</span>
+      <h1>Lanao<br><em>Reserve</em></h1>
+      <p class="lede">Hand-picked Arabica grown 1,400 meters up the volcanic slopes of Davao. Slow-roasted in small batches to reveal dark chocolate, toasted almond, and ripe cherry.</p>
+      <div class="hero-actions">
+        <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order a bag</a>
+        <a href="#story" class="btn-secondary">Read the story →</a>
       </div>
-      <div class="bag-info">ROASTED 04 / 26 · ASLOM</div>
+    </div>
+    <div class="hero-visual">
+      <div class="bag">
+        <div class="bag-label">
+          <div class="small">DAVAO · PHILIPPINES</div>
+          <div class="name">Lanao<br><em>Reserve</em></div>
+          <div class="small">200G · WHOLE BEAN</div>
+        </div>
+        <div class="bag-info">ROASTED 04 / 26 · ASLOM</div>
+      </div>
     </div>
   </div>
+
+  <!-- Slide 2: Magsaysay Filter -->
+  <div class="hero-slide">
+    <div class="hero-text">
+      <span class="label">Single origin · Light roast</span>
+      <h1>Magsaysay<br><em>Filter</em></h1>
+      <p class="lede">Rare Excelsa from the highlands of Magsaysay, Davao del Sur. A light roast that opens up with fruity brightness, natural sweetness, and a lingering spice finish.</p>
+      <div class="hero-actions">
+        <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Coming soon</a>
+        <a href="#coffees" class="btn-secondary">See the library →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="bag light">
+        <div class="bag-label">
+          <div class="small">DAVAO DEL SUR · PHILIPPINES</div>
+          <div class="name">Magsaysay<br><em>Filter</em></div>
+          <div class="small">200G · WHOLE BEAN</div>
+        </div>
+        <div class="bag-info">COMING SOON · ASLOM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="hero-dots">
+    <button class="dot active" onclick="goToSlide(0)"></button>
+    <button class="dot" onclick="goToSlide(1)"></button>
+  </div>
+
 </section>
 
 <section class="catalog" id="coffees">
@@ -380,7 +438,7 @@
         <span>Ripe cherry</span>
       </div>
       <div class="price">₱520 <small>/ 200g</small></div>
-      <a href="#order" class="btn-primary">Order now</a>
+      <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order now</a>
       <button class="brew-toggle" onclick="toggleRecipe(this)">View brew recipe ↓</button>
       <div class="brew-recipe">
         <div class="brew-method">Pour over dripper</div>
@@ -442,61 +500,6 @@
   </div>
 </section>
 
-<section class="notes" id="notes">
-  <div class="notes-header">
-    <span class="label">In the cup</span>
-    <h2>Notes of <em>warmth</em>.</h2>
-  </div>
-  <div class="notes-grid">
-    <div class="note-card">
-      <div class="icon">D</div>
-      <h3>Dark chocolate</h3>
-      <span class="label">Body</span>
-    </div>
-    <div class="note-card">
-      <div class="icon">A</div>
-      <h3>Toasted almond</h3>
-      <span class="label">Aroma</span>
-    </div>
-    <div class="note-card">
-      <div class="icon">C</div>
-      <h3>Ripe cherry</h3>
-      <span class="label">Finish</span>
-    </div>
-    <div class="note-card">
-      <div class="icon">L</div>
-      <h3>Low acidity</h3>
-      <span class="label">Mouthfeel</span>
-    </div>
-  </div>
-</section>
-
-<section class="brew" id="brew">
-  <div class="brew-header">
-    <span class="label">How to brew</span>
-    <h2>Three ways to <em>meet the bean</em>.</h2>
-  </div>
-  <div class="brew-grid">
-    <div class="brew-card">
-      <div class="brew-num">No. 01</div>
-      <h3>French press</h3>
-      <p>Coarse, deliberate. Lets the oils carry every layer of chocolate and stone fruit straight to the cup.</p>
-      <div class="brew-spec"><span>Coarse grind</span><span>4 min</span><span>1:15 ratio</span></div>
-    </div>
-    <div class="brew-card">
-      <div class="brew-num">No. 02</div>
-      <h3>Pour over</h3>
-      <p>Clean and clarifying. Gives you the full arc — almond on the nose, cherry on the way out.</p>
-      <div class="brew-spec"><span>Medium grind</span><span>3 min</span><span>1:16 ratio</span></div>
-    </div>
-    <div class="brew-card">
-      <div class="brew-num">No. 03</div>
-      <h3>Espresso</h3>
-      <p>Concentrated, jammy, dense. The roast is built for milk drinks but holds its own as a straight shot.</p>
-      <div class="brew-spec"><span>Fine grind</span><span>25 sec</span><span>1:2 ratio</span></div>
-    </div>
-  </div>
-</section>
 
 <section class="cta" id="order">
   <span class="label">Roasted weekly · ships nationwide</span>
@@ -507,7 +510,7 @@
     <div class="unit">/ 200g bag</div>
   </div>
   <br>
-  <a href="mailto:hello@aslom.ph?subject=Order: Lanao Reserve" class="btn-primary">Order Lanao Reserve</a>
+  <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order now</a>
 </section>
 
 <footer>
@@ -517,6 +520,22 @@
 </footer>
 
 <script>
+  // Hero slider
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dots .dot');
+
+  function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+
+  // Brew recipe toggle
   function toggleRecipe(btn) {
     const recipe = btn.nextElementSibling;
     const isOpen = recipe.classList.toggle('open');
