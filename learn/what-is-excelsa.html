@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is Excelsa? — aslom Learn Coffee</title>
+<meta name="description" content="Excelsa is the rare third coffee — distinct from Arabica and Robusta. Here's what it is, how it tastes, and why the Philippines is one of the few places it grows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F4EDE0; --cream-deep: #E8DDC7;
+    --bean: #2A1810; --bean-soft: #4A2C1F;
+    --terracotta: #B8542C; --terracotta-deep: #8B3E1F;
+    --ink: #1C1410;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5vw;
+    background: rgba(244, 237, 224, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(42, 24, 16, 0.08);
+  }
+  nav .brand { font-family: 'Fraunces', serif; font-size: 22px; font-style: italic; color: var(--bean); text-decoration: none; }
+  nav .back { font-size: 13px; color: var(--bean-soft); text-decoration: none; }
+  nav .back:hover { color: var(--terracotta); }
+
+  .article-hero { padding: 140px 5vw 60px; max-width: 780px; margin: 0 auto; }
+  .article-tag { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); display: block; margin-bottom: 20px; }
+  .article-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; color: var(--bean); margin-bottom: 20px; }
+  .article-hero h1 em { font-style: italic; color: var(--terracotta); }
+  .article-intro { font-size: 19px; color: var(--bean-soft); border-left: 3px solid var(--terracotta); padding-left: 20px; }
+
+  .article-body { max-width: 780px; margin: 0 auto; padding: 0 5vw 100px; }
+  .article-body h2 { font-family: 'Fraunces', serif; font-size: 28px; color: var(--bean); margin: 48px 0 16px; }
+  .article-body h2 em { font-style: italic; color: var(--terracotta-deep); }
+  .article-body p { font-size: 17px; color: var(--bean-soft); margin-bottom: 20px; line-height: 1.8; }
+  .article-body ul { margin: 0 0 20px 20px; }
+  .article-body ul li { font-size: 17px; color: var(--bean-soft); line-height: 1.8; margin-bottom: 8px; }
+  .callout {
+    background: var(--cream-deep); border-left: 3px solid var(--terracotta);
+    padding: 24px 28px; margin: 32px 0; font-size: 16px; color: var(--bean); font-style: italic;
+  }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+  .compare-table th { background: var(--bean); color: var(--cream); padding: 14px 18px; text-align: left; font-family: 'Fraunces', serif; font-size: 18px; font-weight: 400; }
+  .compare-table td { padding: 14px 18px; border-bottom: 1px solid rgba(42,24,16,0.1); color: var(--bean-soft); vertical-align: top; }
+  .compare-table tr:nth-child(even) td { background: var(--cream-deep); }
+  .compare-table td:first-child { font-weight: 500; color: var(--bean); width: 30%; }
+
+  .article-nav { display: flex; gap: 16px; margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(42,24,16,0.1); flex-wrap: wrap; }
+  .article-nav a { background: var(--bean); color: var(--cream); padding: 14px 28px; text-decoration: none; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s; }
+  .article-nav a:hover { background: var(--terracotta); }
+  .article-nav a.secondary { background: transparent; color: var(--bean); border: 1px solid rgba(42,24,16,0.2); }
+  .article-nav a.secondary:hover { border-color: var(--terracotta); color: var(--terracotta); background: transparent; }
+
+  footer { padding: 40px 5vw; background: var(--ink); color: rgba(244,237,224,0.6); text-align: center; font-size: 13px; }
+  footer .brand-foot { font-family: 'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--cream); margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="brand">aslom</a>
+  <a href="../index.html#learn" class="back">← Back to Learn Coffee</a>
+</nav>
+
+<div class="article-hero">
+  <span class="article-tag">Coffee Species</span>
+  <h1>What is <em>Excelsa</em>?</h1>
+  <p class="article-intro">Most of the world drinks Arabica or Robusta. A small slice — mostly in Southeast Asia — drinks something else. This is the third coffee.</p>
+</div>
+
+<div class="article-body">
+
+  <h2>The <em>third</em> coffee.</h2>
+  <p>Of the roughly 130 known species of coffee, only three are commercially significant: Arabica, Robusta, and Liberica. Excelsa was once classified as its own species — Coffea excelsa — but was reclassified in 2006 as a variety of Coffea liberica. Practically, most coffee professionals still talk about Excelsa as its own thing, because it tastes and behaves differently from typical Liberica.</p>
+  <p>Excelsa makes up less than 1% of global coffee production. The vast majority of people who consider themselves "into coffee" have never knowingly tasted it.</p>
+
+  <h2>Where Excelsa <em>grows</em>.</h2>
+  <p>Excelsa is largely a Southeast Asian story. It is found in Vietnam, India, parts of Indonesia, southern China, parts of Africa — and the Philippines, where it has been grown for generations. The plant prefers mid-elevations (around 600–1,200 meters) and is more heat-tolerant than Arabica, which makes it well-suited to lowland tropical climates.</p>
+  <p>The Excelsa tree itself is striking — taller than most coffee plants, with larger leaves and longer cherries. The beans are characteristically more elongated and pointed than Arabica's flatter oval shape, which is one of the easiest visual cues to identify it in a roasted form.</p>
+
+  <h2>How it <em>tastes</em>.</h2>
+  <p>This is where Excelsa earns its reputation. Done well, it produces a cup that is unmistakably its own — not better or worse than Arabica, just different.</p>
+  <ul>
+    <li><strong>Fruity</strong> — often tart and tropical: jackfruit, dried mango, stone fruit, sometimes citrus.</li>
+    <li><strong>Spiced</strong> — gentle warmth on the finish; some cups read as cinnamon, clove, or anise.</li>
+    <li><strong>Syrupy body</strong> — a heavier, rounder mouthfeel than most Arabica filter coffees.</li>
+    <li><strong>Sweet aftertaste</strong> — molasses, brown sugar, sometimes a slight cola-like quality on the back end.</li>
+    <li><strong>Lower brightness</strong> — Excelsa is not as acidic as a high-altitude Arabica. The complexity sits in the body and finish, not the front.</li>
+  </ul>
+  <p>Roast level changes the conversation significantly. A light roast pulls forward the fruit and the spice. A medium-to-dark roast leans into chocolate, molasses, and a deeper sweetness — closer to what most Filipino drinkers grew up with.</p>
+
+  <h2>How it stacks up <em>against the others</em>.</h2>
+  <table class="compare-table">
+    <thead>
+      <tr><th>—</th><th>Arabica</th><th>Robusta</th><th>Excelsa</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Share of world supply</td><td>~60–70%</td><td>~30–40%</td><td>&lt;1%</td></tr>
+      <tr><td>Altitude</td><td>800–2,200 m</td><td>0–800 m</td><td>~600–1,200 m</td></tr>
+      <tr><td>Caffeine</td><td>~1.2–1.5%</td><td>~2.2–2.7%</td><td>~1.0–1.4%</td></tr>
+      <tr><td>Flavor</td><td>Complex, fruity, bright</td><td>Bitter, earthy, woody</td><td>Tart fruit, spice, syrupy</td></tr>
+      <tr><td>Body</td><td>Light to medium</td><td>Heavy, thick</td><td>Medium to syrupy</td></tr>
+      <tr><td>Bean shape</td><td>Flat oval, even cut</td><td>Round, smaller</td><td>Long, pointed, irregular</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">"Excelsa is what coffee tastes like when you stop trying to make it taste like everywhere else. It's regional, it's stubborn, and it's worth the detour."</div>
+
+  <h2>Excelsa in the <em>Philippines</em>.</h2>
+  <p>Coffee has been grown in the Philippines since the 1700s, and Excelsa has been part of that story for more than a century. While Arabica gets most of the modern specialty attention, Excelsa quietly persists in places where Arabica won't grow well — particularly in Mindanao, where the climate and altitude suit it.</p>
+  <p>Today you'll find Excelsa in pockets of Davao del Sur, South Cotabato, Bukidnon, and Sultan Kudarat. Some of it goes into commercial blends and never gets named. A small amount finds its way to specialty roasters who treat it as a single origin — letting the cup speak for itself instead of hiding it inside a blend.</p>
+  <p>The Philippine Excelsa story is still early. Most farmers grew it because it survived where other species didn't, not because they were chasing a flavor profile. As specialty coffee grows here, those same trees — now decades old — are being rediscovered as something distinctive rather than something secondary.</p>
+
+  <h2>Why <em>aslom</em> roasts Excelsa.</h2>
+  <p>Our launch bean — <strong>Alta Vista Excelsa</strong> — is sourced direct from farmer Boy in Brgy. Alta Vista, Bansalan, Davao del Sur. We chose it for three reasons:</p>
+  <ul>
+    <li><strong>It's local.</strong> Davao-grown, single-farm, single-lot. We can name the place. We can name the farmer.</li>
+    <li><strong>It's rare.</strong> You won't find it on most cafe menus. That alone makes it worth showing up for.</li>
+    <li><strong>It rewards a careful roast.</strong> Light-roasted for filter, the fruit and spice come forward, the syrupy body holds the cup together, the finish is sweet without being heavy. It's not a coffee you forget.</li>
+  </ul>
+  <p>Excelsa is not a replacement for Arabica. It's its own thing. If you've spent years drinking specialty Arabica, this will feel different — not lesser, just different. That's the point.</p>
+
+  <div class="article-nav">
+    <a href="natural-honey-washed.html">Next: Natural, Honey & Washed →</a>
+    <a href="arabica-vs-robusta.html" class="secondary">← Arabica vs Robusta</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="brand-foot">aslom</div>
+  <p>© 2026 aslom. Roasted with patience.</p>
+</footer>
+
+</body>
+</html>
