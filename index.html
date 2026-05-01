@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amai Manabilang — aslom</title>
-<meta name="description" content="Single-origin Arabica from the volcanic slopes of Davao. Slow-roasted in small batches.">
+<title>Alta Vista Excelsa — aslom</title>
+<meta name="description" content="Small-batch Excelsa from Brgy. Alta Vista, Bansalan, Davao del Sur. Light-roasted for filter. Sourced direct from farmer Boy.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -282,7 +282,7 @@
   .catalog-header { text-align: center; margin-bottom: 60px; }
   .catalog-header h2 { font-size: clamp(36px, 4vw, 56px); color: var(--bean); margin-top: 12px; }
   .catalog-header h2 em { font-style: italic; color: var(--terracotta); }
-  .catalog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 900px; margin: 0 auto; }
+  .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 480px)); gap: 32px; max-width: 900px; margin: 0 auto; justify-content: center; }
   .catalog-card {
     border: 1px solid rgba(42, 24, 16, 0.15);
     padding: 40px 36px;
@@ -388,58 +388,43 @@
 
 <section class="hero">
 
-  <!-- Slide 1: Amai Manabilang -->
+  <!-- Hero: Alta Vista Excelsa (launch product) -->
   <div class="hero-slide active">
     <div class="hero-text">
-      <span class="label">Arabica · Medium roast · St. Mary of Downtown Farmers</span>
-      <h1>Amai<br><em>Manabilang</em></h1>
-      <p class="lede">From the SMD Farmers Organization Inc. — a coffee-growing cooperative in the highlands of Amai Manabilang (formerly Bumbaran), Lanao del Sur. Notes of ripe cherry, black tea, and apple.</p>
+      <span class="label">Single origin · Light roast · Filter</span>
+      <h1>Alta Vista<br><em>Excelsa</em></h1>
+      <p class="lede">Rare Excelsa sourced direct from farmer Boy in Brgy. Alta Vista, Bansalan, Davao del Sur. Light-roasted for filter — jackfruit, gentle spice, syrupy body, sweet finish.</p>
       <div class="hero-actions">
         <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order a bag</a>
         <a href="#coffees" class="btn-secondary">See the library →</a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="bag">
-        <div class="bag-label">
-          <div class="small">LANAO DEL SUR · PHILIPPINES</div>
-          <div class="name">Amai<br><em>Manabilang</em></div>
-          <div class="small">200G · WHOLE BEAN</div>
-        </div>
-        <div class="bag-info">ROASTED 04 / 26 · ASLOM</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 2: Magsaysay Filter -->
-  <div class="hero-slide">
-    <div class="hero-text">
-      <span class="label">Single origin · Light roast</span>
-      <h1>Magsaysay<br><em>Filter</em></h1>
-      <p class="lede">Rare Excelsa from the highlands of Magsaysay, Davao del Sur. A light roast that opens up with fruity brightness, natural sweetness, and a lingering spice finish.</p>
-      <div class="hero-actions">
-        <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Coming soon</a>
-        <a href="#coffees" class="btn-secondary">See the library →</a>
-      </div>
-    </div>
-    <div class="hero-visual">
       <div class="bag light">
         <div class="bag-label">
-          <div class="small">DAVAO DEL SUR · PHILIPPINES</div>
-          <div class="name">Magsaysay<br><em>Filter</em></div>
-          <div class="small">200G · WHOLE BEAN</div>
+          <div class="small">BANSALAN · DAVAO DEL SUR</div>
+          <div class="name">Alta Vista<br><em>Excelsa</em></div>
+          <div class="small">250G · WHOLE BEAN</div>
         </div>
-        <div class="bag-info">COMING SOON · ASLOM</div>
+        <div class="bag-info">ROASTED WEEKLY · ASLOM</div>
       </div>
     </div>
   </div>
 
-  <!-- Dots -->
-  <div class="hero-dots">
-    <button class="dot active" onclick="goToSlide(0)"></button>
-    <button class="dot" onclick="goToSlide(1)"></button>
-  </div>
+</section>
 
+<section class="story">
+  <div>
+    <span class="label">The story</span>
+    <h2>One roaster. One <em>farmer</em>. One bag.</h2>
+    <p>ASLOM is small-batch coffee from a Davao coffee professional, three years in. The launch bean is Excelsa sourced from Boy in Brgy. Alta Vista, Bansalan — locally grown, hard to find anywhere else.</p>
+    <p>Roasted light for filter: jackfruit, gentle spice, syrupy body, sweet finish <em>(full notes after this weekend's cupping)</em>. Every bag ships with a detailed brew guide, written for this exact roast — so you brew it right at home, no guesswork.</p>
+    <p>Coffee from a roaster you can name, beans from a farmer you can name. That's the trade.</p>
+  </div>
+  <div class="story-stat">
+    <div class="number">2 kg</div>
+    <div class="desc">Sourced from Boy this batch — single-farm, single-lot, single-roast. When the bags are gone, the next batch is a different roast, dialed again.</div>
+  </div>
 </section>
 
 <section class="catalog" id="coffees">
@@ -450,42 +435,19 @@
   <div class="catalog-grid">
 
     <div class="catalog-card">
-      <span class="catalog-badge available">Available</span>
-      <div class="origin">Amai Manabilang, Lanao del Sur · Philippines</div>
-      <h3>Amai<br><em>Manabilang</em></h3>
-      <div class="roast">Arabica · Medium roast · SMD Farmers</div>
+      <span class="catalog-badge available">Launch · May 4</span>
+      <div class="origin">Brgy. Alta Vista, Bansalan, Davao del Sur · Philippines</div>
+      <h3>Alta Vista<br><em>Excelsa</em></h3>
+      <div class="roast">Excelsa · Light roast · Filter · Sourced from farmer Boy</div>
       <div class="tasting">
-        <span>Ripe cherry</span>
-        <span>Black tea</span>
-        <span>Apple</span>
+        <span>Jackfruit</span>
+        <span>Gentle spice</span>
+        <span>Syrupy</span>
+        <span>Sweet finish</span>
       </div>
-      <div class="price">₱400 <small>/ 200g</small></div>
-      <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order now</a>
-      <button class="brew-toggle" onclick="toggleRecipe(this)">View brew recipe ↓</button>
-      <div class="brew-recipe">
-        <div class="brew-method">Pour over dripper</div>
-        <div class="brew-specs">
-          <div class="brew-spec-item"><div class="spec-label">Grind</div><div class="spec-value">Medium</div></div>
-          <div class="brew-spec-item"><div class="spec-label">Water temp</div><div class="spec-value">93°C</div></div>
-          <div class="brew-spec-item"><div class="spec-label">Ratio</div><div class="spec-value">1 : 16</div></div>
-          <div class="brew-spec-item"><div class="spec-label">Brew time</div><div class="spec-value">3 min</div></div>
-        </div>
-        <div class="brew-note">"A steady pour reveals ripe cherry brightness and a clean black tea finish."</div>
-      </div>
-    </div>
-
-    <div class="catalog-card coming-soon">
-      <span class="catalog-badge">Coming Soon</span>
-      <div class="origin">Magsaysay, Davao del Sur · Philippines</div>
-      <h3>Magsaysay<br><em>Filter</em></h3>
-      <div class="roast">Excelsa · Light roast</div>
-      <div class="tasting">
-        <span>Fruity</span>
-        <span>Sweet</span>
-        <span>Spice</span>
-      </div>
-      <div class="price">₱400 <small>/ 200g</small></div>
-      <div class="coming-label">Releasing next week — stay tuned.</div>
+      <div class="price">₱400 <small>/ 250g · + shipping at cost</small></div>
+      <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order via Facebook</a>
+      <div class="coming-label" style="margin-top:12px">Final tasting notes confirmed after this weekend's cupping. Order cutoff: May 11.</div>
       <button class="brew-toggle" onclick="toggleRecipe(this)">View brew recipe ↓</button>
       <div class="brew-recipe">
         <div class="brew-method">Pour over dripper</div>
@@ -495,7 +457,7 @@
           <div class="brew-spec-item"><div class="spec-label">Ratio</div><div class="spec-value">1 : 15</div></div>
           <div class="brew-spec-item"><div class="spec-label">Brew time</div><div class="spec-value">3:30 min</div></div>
         </div>
-        <div class="brew-note">"Lower temp and a finer grind coax the fruity and spice notes out of this light Excelsa."</div>
+        <div class="brew-note">"Lower temp and a finer grind coax the jackfruit and spice notes out of this light Excelsa."</div>
       </div>
     </div>
 
@@ -541,7 +503,7 @@
   <p>Free shipping on orders over ₱1,500. Subscribe and save 15%.</p>
   <div class="price-box">
     <div class="amount">₱400</div>
-    <div class="unit">/ 200g bag</div>
+    <div class="unit">/ 250g bag · + shipping at cost</div>
   </div>
   <br>
   <a href="https://www.facebook.com/gehahahahahahaha/" target="_blank" class="btn-primary">Order now</a>
@@ -554,21 +516,6 @@
 </footer>
 
 <script>
-  // Hero slider
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots = document.querySelectorAll('.hero-dots .dot');
-
-  function goToSlide(n) {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    currentSlide = n;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-  }
-
-  setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
-
   // Brew recipe toggle
   function toggleRecipe(btn) {
     const recipe = btn.nextElementSibling;
